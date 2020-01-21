@@ -6,7 +6,7 @@ if (isset($_GET["page"])) {
 	$page=$_GET["page"];
 }
 
-include $page.".php";
+include "../Vue/".$page.".php";
 
 
 ?>

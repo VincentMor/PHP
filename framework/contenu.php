@@ -1,12 +1,15 @@
 <?php
-$page="accueil";
 // ajouter un tableau avec le nom des pages autorisée et verifier si la page demande en fait partie
-
-if (isset($_GET["page"])) {
-	$page=$_GET["page"];
+if(isset($_POST['Connexion'])){
+   include("../Modele/connexion_modele.php");
 }
-
-include "../Vue/".$page.".php";
-
-
+if(isset($_SESSION["login"])){
+	$page="gestionCircuitControleur";
+	if (isset($_GET["page"])){
+		$page=$_GET["page"];
+	}
+}else{
+	$page="connexionControleur";
+}
+include("../Controleur/".$page.".php");
 ?>

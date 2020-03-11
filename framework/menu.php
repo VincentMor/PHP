@@ -1,2 +1,6 @@
-<div class="rub"><a href="index.php?page=acceuil">Se Deconnecter</a></div>
-<div class="rub"><a href="index.php?page=liste_encheres_terminees_main">Enchères terminées</a></div>
+<?php
+if(isset($_SESSION["login"])){
+    echo'<div class="rub"><form method="post" action="../framework/index.php?page=deconnexionControleur">
+	<input type="submit" name="deconnexion" value="deconnexion" />
+	</form>	</div>';
+}

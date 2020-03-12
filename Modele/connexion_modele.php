@@ -12,8 +12,11 @@ if(	isset($_POST['login']) && !empty($_POST['login'])){ /*&&
     $utilisateur->execute(array($login,$mdp));
     $res=$utilisateur->rowCount();
     if($res==1){
+        $data=$utilisateur->fetch();
         $param_login=$_POST['login'];
         $_SESSION['login']=$param_login;
+        $_SESSION['role']=$data['role'];
+
         header("Refresh:0");
     }else{
         echo 'login ou mot de passe incorrect';

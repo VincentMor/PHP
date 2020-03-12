@@ -1,5 +1,5 @@
 <?php
-$requete = "SELECT pseudo FROM utilisateur ORDER BY nom;";
+$requete = "SELECT login FROM utilisateur ORDER BY login;";
 $listeUtilisateur=$dbh -> prepare($requete);
 $listeUtilisateur->execute();
 

@@ -1,10 +1,52 @@
-#banniere{
-    height: 5%;
+.navbar{
+	background-color: #318CE7!important;
 }
-#centre{
-    display:flex;
-    flex-direction: row;
+#navbarSupportedContent {
+	background-color: rgb(70,130,180)!important;
 }
-#menu{
-    width: 10%;
+/* active */
+.nav-pills .nav-link.active {
+    background-color: rgb(70,130,180)!important;
+}
+
+/* active en hover*/
+.nav-pills .nav-link:hover {
+    background-color: rgba(70,130,180,0.6)!important;
+} 
+/* 
+active (faded) */
+.nav-pills .nav-link {
+    background-color: rgba(70,130,180,0.6)!important;
+    color: white;
+}
+#logo{
+	font-size: 2;
+}
+section{
+	height: 100vh;
+
+}
+#document{
+	background-color:#318CE7!important;
+	padding: 2%;
+	color: #fff;
+}
+h2{
+	padding: 5% 0;
+}
+ul{
+	list-style: none;
+}
+ul a{
+	color: #fff;
+}
+#headrow{
+	padding: 5% 5%;
+
+}
+#liste{
+	padding:0 3%;
+}
+.thead{
+	background-color: #dcd8d8!important;
 }

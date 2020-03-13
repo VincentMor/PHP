@@ -9,7 +9,7 @@ $nbCircuitNonUtilisable = $requete_nbCircuit -> fetch();
 $nbCircuitUtilisable = $nbCircuitNonUtilisable["count(*)"];
 
 if(isset($_POST['AjoutCircuit'])){
-    if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['typeDoc']) && !empty($_POST['typeDoc']) && isset($_POST['etapes']) && !empty($_POST['etapes'])){
+    if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['typeDoc']) && !empty($_POST['typeDoc'])){
         $nom = filter_var($_POST['nom'], FILTER_SANITIZE_STRING);
         $typeDoc = filter_var($_POST['typeDoc'], FILTER_SANITIZE_STRING);
         $requete = "SELECT id FROM circuit where nom=? and typeDocument=?;";

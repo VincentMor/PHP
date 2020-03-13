@@ -21,10 +21,10 @@ if(isset($_SESSION["login"])){
 	</form>	</div>';
 	if($_SESSION["role"]=="admin"){
 		echo'<li class="nav-item">
-	        <a class="nav-link" href="index.php?page=gestionUtilisateurControleur.php">Utilisateurs</a>
+	        <a class="nav-link" href="index.php?page=gestionUtilisateurControleur">Utilisateurs</a>
 	      </li>';
 	    echo'<li class="nav-item">
-	        <a class="nav-link" href="index.php?page=gestionCircuitControleur.php">Circuits</a>
+	        <a class="nav-link" href="index.php?page=gestionCircuitControleur">Circuits</a>
 	      </li>';
 
 		/*<div class="rub"><form method="post" action="../framework/index.php?page=gestionUtilisateurControleur">

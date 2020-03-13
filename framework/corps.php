@@ -1,19 +1,18 @@
 
 <?php
-echo "<div id='banniere'>";
+echo "<header>";
+	include ("menu.php");
+echo "</header>";
+
+echo "<section class=\"row\">";
+echo "<div class=\"col-2\" id='document'>";
 	include ("banniere.php");
 echo "</div>";
-
-echo "<div id='centre'>";
-	echo "<div id='menu'>";
-		include ("menu.php");
-	echo "</div>";
-
-	echo "<div id='contenu'>";
-		include ("contenu.php");
-	echo "</div>";
+echo "<div class=\"col-10\" id='contenu'>";
+	include ("contenu.php");
+echo "</div>";
 	
-
+echo "</section>";
 echo "</div>";
 
 ?>

@@ -9,7 +9,7 @@
 				<br/>
 				<label for="mdp">Mot de passe:</label>
 				<br/>
-				<input name="mdp" type="text" id="mdp" required/>
+				<input type="password" name="mdp" type="text" id="mdp" required/>
 				<br/>
                 <label for="nom">Nom :</label>
 				<br/>

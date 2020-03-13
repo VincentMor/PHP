@@ -2,11 +2,17 @@ CREATE TABLE utilisateur(login varchar(20) primary key,
                          mdp varchar(20),
                          role varchar(5)
                          nom varchar(20),
-                         prenom varchar(20));
-create table circuit (id int primary key auto_increment,nom varchar(30), typeDocument varchar(30));
+                         prenom varchar(255));
+create table circuit (id int primary key auto_increment,
+                      nom varchar(30), 
+                      typeDocument varchar(30));
 create table listeEtape(idCircuit int,
-                        login varchar(20),
+                        idEtape int,
                         constraint FK_CIRCUIT foreign key(idCircuit) references circuit(id),
-                        constraint FK_UTILISATEUR foreign key(login) references utilisateur(login));
-create table
-insert into utilisateur values ('toto','toto','admin',"Jean","Bon");
+                        constraint FK_ETAPES foreign key(idEtape) references etape(id));
+create table etape(id int primary key auto_increment,
+                    nom varchar(20),
+                    position int,
+                    personne varchar(20),
+                    constraint FK_UTILISATEUR foreign key(personne) references utilisateur(login));
+insert into utilisateur values ('toto','$2y$10$hyGUl/M5fiF361SOvQn1o.o6i02rsZ3tg4v5vJxAHVDuP7clgAHyu','admin',"Jean","Bon");

@@ -1,8 +1,4 @@
 <style type="text/css">
-/* body {
-    display: flex;
-    justify-content: center;
-} */
 td {
     border: black 1px solid;
     padding: 5px 5px 5px 5px;

@@ -15,11 +15,11 @@
 	      
 	      <li class="nav-item">
 <?php
-/*if(isset($_SESSION["login"])){
-    echo'<div class="rub"><form method="post" action="../framework/index.php?page=deconnexionControleur">
+if(isset($_SESSION["login"])){
+    echo'<div class="rub"><form method="post" action="../framework/index.php">
 	<input type="submit" name="deconnexion" value="deconnexion" />
-	</form>	</div>';*/
-	//if($_SESSION["role"]=="admin"){
+	</form>	</div>';
+	if($_SESSION["role"]=="admin"){
 		echo'<li class="nav-item">
 	        <a class="nav-link" href="index.php?page=gestionUtilisateurControleur">Utilisateurs</a>
 	      </li>';
@@ -33,18 +33,5 @@
 		/*echo'<div class="rub"><form method="post" action="../framework/index.php?page=gestionCircuitControleur">
 		<input type="submit" name="gestionCircuit" value="gestionCircuit" />
 		</form>	</div>';*/
-
-	//}
-//}
-?>
-<li class="nav-item">
-	        <a class="nav-link" href="admin_vue.php">Admin</a>
-	      </li>
-  </li>
-	    </ul>
-	  </div>
-	  <!-- Collapsible content -->
-
-	</nav>
-	<!--/.Navbar-->
-</header>
+	}
+}

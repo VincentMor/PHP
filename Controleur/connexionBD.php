@@ -1,8 +1,8 @@
 <?php
     try {
-        $dbname='work';
+        $dbname='vm484242';
         $user='root';
-        $pass="";
+        $pass="root";
         $dbh = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
         
         } catch (PDOException $e) {

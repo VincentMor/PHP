@@ -28,6 +28,6 @@ if(isset($_POST['AjoutCircuit'])){
 if(isset($_POST['supprimer'])){
     $requete="DELETE FROM circuit WHERE id=?";
     $suppresion=$dbh -> prepare($requete);
-    $suppresion->execute($_POST["supprimer"]);
+    $suppresion->execute(array($_POST["supprimer"]));
     header("Refresh:0");
 }

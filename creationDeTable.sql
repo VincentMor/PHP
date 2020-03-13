@@ -1,6 +1,6 @@
 CREATE TABLE utilisateur(login varchar(20) primary key,
                          mdp varchar(20),
-                         role varchar(5)
+                         role varchar(5),
                          nom varchar(20),
                          prenom varchar(255));
 create table circuit (id int primary key auto_increment,

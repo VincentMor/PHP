@@ -6,8 +6,11 @@ td {
 table {
     border-collapse: collapse;
 }
+#ajoutU{
+    text-align: right;
+}
 </style>
-<a href="index.php?page=ajoutCircuitControleur">Ajout de circuit</a>
+<a id="ajoutU" href="index.php?page=ajoutCircuitControleur">Ajout de circuit</a>
 <table>
     <tr>
         <td>

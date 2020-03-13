@@ -11,17 +11,6 @@
 				<br/>
 				<input name="typeDoc" type="text" id="nom" required/>
 				<br/>
-				<label for="etapes">Ajouter des étapes:</label>
-				<br/>
-				<select name="etapes" required multiple>
-				<?php
-					if($listeUtilisateur->rowcount() != null){
-						while($data = $listeUtilisateur->fetch()){
-							echo " <option value=".$data["login"].">".$data["login"]."</option>";
-						}
-					}
-				?>
-				</select>
 				<hr/>
 				<input type="submit" name="AjoutCircuit" value="AjoutCircuit"/>
 			</fieldset>

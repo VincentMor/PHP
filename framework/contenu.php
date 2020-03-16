@@ -13,7 +13,7 @@ if(isset($_SESSION["login"])){*/
 		$page=$_GET["page"];
 	}
 //}else{
-	$page="connexionControleur";
+	//$page="connexionControleur";
 //}
 include("../Controleur/".$page.".php");
 ?>

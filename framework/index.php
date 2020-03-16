@@ -21,9 +21,11 @@ session_start();
 		<script type="text/javascript" src="jquery-2.2.1.min.js"></script>
 	</head>
 	<body>
+		<!-- <main class="container-fluid"> -->
 	<?php
 		include ("corps.php");
 	
 	?>
+		<!-- </main> -->
 	</body>
 </html>

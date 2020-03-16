@@ -1,8 +1,8 @@
 <div style="display: flex; justify-content: center; margin-top: 100px;">
-	<form method="post" action="../framework/index.php?page=gestionUtilisateurControleur">
+	<form method="post" action="../framework/index.php?page=gestionUtilisateurControleur" name="inscription">
 		<div>
 			<fieldset>
-				<legend>Ajout de circuit</legend>
+				<legend>Ajout d'utilisateur</legend>
 				<label for="login">email:</label>
 				<br/>
 				<input name="login" type="text" id="login" required/>
@@ -20,8 +20,11 @@
                 <input name="prenom" type="text" id="prenom" required/>
 				<br/>
 				<hr/>
-				<input type="submit" name="inscription" value="inscription"/>
+				<input type="submit" name="inscription" value="aouter"/>
 			</fieldset>
 		</div>
-	</form>	
+	</form>
+	<form method="post" action="../framework/index.php?page=gestionUtilisateurControleur" name="retourliste">
+		<input type="submit" value="Retour à la liste" />
+	</form>
 </div>

@@ -1,3 +1,12 @@
+<style type="text/css">
+td {
+    border: black 1px solid;
+    padding: 5px 5px 5px 5px;
+}
+table {
+    border-collapse: collapse;
+}
+</style>
 <div>
 	<form method="post" action="../framework/index.php?page=ajoutEtapeControleur" name="creerEtape">
 		<div>
@@ -31,14 +40,14 @@
 	</form>	
 </div>
 <div>
-	<form method="post" action="../framework/index.php?page=gestionEtapeControleur" name="ajouterEtape">
+	<form method="post" action="../framework/index.php?page=ajoutEtapeControleur" name="ajouterEtape">
 		<div>
 			<fieldset>
 				<legend>Gérer les Etapes</legend>
 				
-				<label for="personne">Choisissez une personne agissant:</label>
+				<label for="Etape">Choisissez une étape:</label>
 				<br/>
-				<select name="personne" required>
+				<select name="Etape" required>
 				<?php
 					if($requeteEtape->rowcount() != null){
 						while($data = $requeteEtape->fetch()){
@@ -49,8 +58,31 @@
 				</select>
 				<br/>
 				<hr/>
-				<input type="submit" name="etape" value="Ajouter"/>
+				<?php
+				echo "<button name=\"etape\" type=\"submit\" value=".$idCircuit.">Ajouter</button>"
+				?>
 			</fieldset>
 		</div>
-	</form>	
+	</form>
+	<table>
+		<tr>
+			<?php
+					echo "<td colspan=2>Circuit: ". $circuit["nom"]."</td><td>Type de document: ".$circuit["typeDocument"]."</td></tr>";
+			?>
+		<tr>
+		<td colspan=3>Etapes:</td>
+		</tr>
+		<tr>
+		<td>Nom</td><td>Personne agisante</td><td>Position</td>
+		</tr>
+		<?php
+		while ($idEtape = $requeteListeEtape -> fetch()) {
+        echo "<tr>";
+        echo "<td>".getNomEtape($idEtape["idEtape"])."</td>";
+        echo "<td>".getPersonneEtape($idEtape["idEtape"])["nom"]." ".getPersonneEtape($idEtape["idEtape"])["prenom"]."</td>";
+        echo "<td>".getPositionEtape($idEtape["idEtape"])."</td>";
+        echo "</tr>";
+		}
+	?>
+	</table>
 </div>

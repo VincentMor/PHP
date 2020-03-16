@@ -1,5 +1,5 @@
 <?php
-$requete = "SELECT * FROM utilisateur ORDER BY nom;";
+$requete = "SELECT * FROM utilisateur where role<>'admin' ORDER BY nom;";
 $requete_utilisateur = $dbh -> prepare($requete);
 $requete_utilisateur -> execute();
 

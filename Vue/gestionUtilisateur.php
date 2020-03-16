@@ -7,7 +7,6 @@ table {
     border-collapse: collapse;
 }
 </style>
-<a href="index.php?page=ajoutCircuitControleur">Ajout de circuit</a>
 <table>
     <tr>
         <td>

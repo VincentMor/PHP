@@ -16,4 +16,8 @@ if(isset($_SESSION["login"])){*/
 	//$page="connexionControleur";
 //}
 include("../Controleur/".$page.".php");
+
+function phpAlert($msg) {
+    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+}
 ?>

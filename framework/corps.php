@@ -1,18 +1,14 @@
+<header>
+	<?php include ("menu.php"); ?>
+</header>
 
-<?php
-echo "<header>";
-	include ("menu.php");
-echo "</header>";
+<section class="row">
+	<div class="col-2" id='document'>
+		<?php include ("banniere.php"); ?>
+	</div>
+	<div class="col-10" id='contenu'>
+		<?php  include ("contenu.php"); ?>
+	</div>
+</section>
 
-echo "<section class=\"row\">";
-echo "<div class=\"col-2\" id='document'>";
-	include ("banniere.php");
-echo "</div>";
-echo "<div class=\"col-10\" id='contenu'>";
-	include ("contenu.php");
-echo "</div>";
-	
-echo "</section>";
-echo "</div>";
 
-?>

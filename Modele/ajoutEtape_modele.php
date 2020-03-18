@@ -26,8 +26,69 @@ if(isset($_POST['creerEtape'])){
     }
 }
 
-if(isset($_POST['ajouterEtape'])){
-    $requete = "SELECT nom FROM circuit where id=?;";
+if(isset($_POST['ajouterEtape'])||isset($_POST['etape'])||isset( $_SESSION["idCircuit"])){
+    if(isset($_POST['ajouterEtape'])){
+        $idCircuit=$_POST['ajouterEtape'];
+        $_SESSION["idCircuit"]=$idCircuit;
+    }else{
+        $idCircuit=$_SESSION["idCircuit"];
+    }
+    $requete = "SELECT nom,typeDocument FROM circuit where id=?;";
     $requeteCircuit = $dbh -> prepare($requete);
-    $requeteCircuit -> execute(array($_POST["ajouterEtape"]));
+    $requeteCircuit -> execute(array($idCircuit));
+    $circuit=$requeteCircuit->fetch();
+    $requete = "SELECT idEtape FROM listeEtape where idCircuit=?;";
+    $requeteListeEtape = $dbh -> prepare($requete);
+    $requeteListeEtape -> execute(array($idCircuit)); 
+}
+
+
+if(isset($_POST['etape'])){
+    $requete="INSERT into listeEtape value(?,?)";
+    $idE = filter_var($_POST['Etape'], FILTER_SANITIZE_STRING);
+    if(getPositionEtape($_POST['Etape'])==getDernierePosition($idCircuit)+1){
+        $insertion=$dbh -> prepare($requete);
+        $insertion->execute(array($idCircuit,$idE));
+        header("Refresh:0");
+    }else{
+        phpAlert("Veuillez ajouter les étapes dans l'ordre");
+    }
+}
+
+function getNomEtape($id){
+    include("../Controleur/connexionBD.php");
+    $requete = "SELECT nom FROM etape where id=?";
+    $requeteNomEtape = $dbh -> prepare($requete);
+    $requeteNomEtape -> execute(array($id));
+    return $requeteNomEtape->fetch()["nom"];
+}
+function getPositionEtape($id){
+    include("../Controleur/connexionBD.php");
+    $requete = "SELECT position FROM etape where id=?";
+    $requetePositonEtape = $dbh -> prepare($requete);
+    $requetePositonEtape -> execute(array($id));
+    return $requetePositonEtape->fetch()["position"];
+}
+
+function getPersonneEtape($id){
+    include("../Controleur/connexionBD.php");
+    $requete = "SELECT personne FROM etape where id=?";
+    $requetePersonneEtape = $dbh -> prepare($requete);
+    $requetePersonneEtape -> execute(array($id));
+    $personne=$requetePersonneEtape->fetch()["personne"];
+    $requete = "SELECT nom,prenom FROM utilisateur where login=?";
+    $requetePersonneEtape = $dbh -> prepare($requete);
+    $requetePersonneEtape -> execute(array($personne));
+    return $requetePersonneEtape->fetch();
+}
+function getDernierePosition($id){
+    include("../Controleur/connexionBD.php");
+    $requete = "SELECT max(position) FROM etape join listeetape on etape.id=listeetape.idEtape WHERE listeetape.idCircuit=?";
+    $requetePositonEtape = $dbh -> prepare($requete);
+    $requetePositonEtape -> execute(array($id));
+    $position=$requetePositonEtape->fetch()["max(position)"];
+    if($position==null){
+        $position=0;
+    }
+    return $position;
 }

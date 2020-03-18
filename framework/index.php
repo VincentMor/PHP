@@ -26,6 +26,6 @@ session_start();
 		include ("corps.php");
 	
 	?>
-		<!-- </main> -->
+		<!-- </main>  -->
 	</body>
 </html>

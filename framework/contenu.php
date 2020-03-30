@@ -8,14 +8,26 @@ if(isset($_POST['deconnexion'])){
 	header("Refresh:0");
  }
 if(isset($_SESSION["login"])){
-	$page="gestionCircuitControleur";
-	if (isset($_GET["page"])){
-		$page=$_GET["page"];
+	if($_SESSION["role"]=="user"){
+		if (isset($_GET["page"])){
+			$page=$_GET["page"];
+			include("../Controleur/".$page.".php");
+		}else{
+			echo "<h1>Selectonnnez un Document</h1>";
+		}
+	}else{
+		if(isset($_GET["page"])){
+			$page=$_GET["page"];
+			include("../Controleur/".$page.".php");
+		}else{
+			echo "<h1>Selectonnnez un Circuit</h1>";
+		}
 	}
 }else{
 	$page="connexionControleur";
+	include("../Controleur/".$page.".php");
+
 }
-include("../Controleur/".$page.".php");
 
 function phpAlert($msg) {
     echo '<script type="text/javascript">alert("' . $msg . '")</script>';

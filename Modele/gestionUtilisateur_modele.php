@@ -3,6 +3,10 @@ $requete = "SELECT * FROM utilisateur where role<>'admin' ORDER BY nom;";
 $requete_utilisateur = $dbh -> prepare($requete);
 $requete_utilisateur -> execute();
 
+if($_SESSION["role"]!="admin"){
+    header("Location: ../framework/index.php");
+    exit();
+}
 
 if(isset($_POST["inscription"])){
     if(isset($_POST['login']) && !empty($_POST['login']) && isset($_POST['mdp']) && !empty($_POST['mdp']) && isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['prenom']) && !empty($_POST['prenom'])){

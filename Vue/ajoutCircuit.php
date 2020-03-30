@@ -1,5 +1,5 @@
 <div style="display: flex; justify-content: center; margin-top: 100px;">
-	<form method="post" action="../framework/index.php?page=gestionCircuitControleur">
+	<form method="post" action="../framework/index.php">
 		<div>
 			<fieldset>
 				<legend>Ajout de circuit</legend>
@@ -12,7 +12,7 @@
 				<input name="typeDoc" type="text" id="nom" required/>
 				<br/>
 				<hr/>
-				<input type="submit" name="AjoutCircuit" value="AjoutCircuit"/>
+				<input type="submit" name="AjoutCircuit" value="Ajouter"/>
 			</fieldset>
 		</div>
 	</form>	

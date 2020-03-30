@@ -20,7 +20,7 @@
                 <input name="prenom" type="text" id="prenom" required/>
 				<br/>
 				<hr/>
-				<input type="submit" name="inscription" value="aouter"/>
+				<input type="submit" name="inscription" value="Ajouter"/>
 			</fieldset>
 		</div>
 	</form>

@@ -22,7 +22,7 @@
                             echo "<td>".$listeCircuitUtilisable["nom"]."</td>";
                             echo "<td>".$listeCircuitUtilisable["typeDocument"]."</td>";
                             echo "<td>
-                            <form method=\"post\" action=\"../framework/index.php?page=gestionCricuitControleur\"><button  class=\"btn btn-link confirmation\" name=\"supprimer\" type=\"submit\" value=".$listeCircuitUtilisable["id"].">supprimer</button></form>";
+                            <form method=\"post\" action=\"../framework/index.php?page=gestionCircuitControleur\"><button  class=\"btn btn-link confirmation\" name=\"supprimer\" type=\"submit\" value=".$listeCircuitUtilisable["id"].">supprimer</button></form>";
                             echo "<form method=\"post\" action=\"../framework/index.php?page=ajoutEtapeControleur\"><button class=\"btn btn-primary \" name=\"ajouterEtape\" type=\"submit\" value=".$listeCircuitUtilisable["id"].">Etape</button></form>";
                             echo "</tr>";
                         }        

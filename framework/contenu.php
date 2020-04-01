@@ -1,8 +1,8 @@
 <?php
 // ajouter un tableau avec le nom des pages autorisée et verifier si la page demande en fait partie
-if(isset($_POST['Connexion'])){
-   include("../Modele/connexion_modele.php");
-}
+include("../Controleur/connexionBD.php");
+include("../Modele/connexion_modele.php");
+
 if(isset($_POST['deconnexion'])){
 	session_destroy();
 	header("Refresh:0");
@@ -24,9 +24,7 @@ if(isset($_SESSION["login"])){
 		}
 	}
 }else{
-	$page="connexionControleur";
-	include("../Controleur/".$page.".php");
-
+	include("../Vue/accueil.php");
 }
 
 function phpAlert($msg) {

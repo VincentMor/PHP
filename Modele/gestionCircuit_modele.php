@@ -27,6 +27,7 @@ if(isset($_POST['AjoutCircuit'])){
         //On préviens l'utilisateur si le circuit existe déjà
         if($existe->rowcount() != null){
             echo "<script>alert(\"Ce circuit existe déjà\");</script>";
+            header("Refresh:0");
         }else{
             //On l'enregistre dans la bd
             $requete="INSERT into circuit (nom,typeDocument) values(?,?)";

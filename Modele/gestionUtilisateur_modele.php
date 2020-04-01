@@ -1,19 +1,24 @@
 <?php
+//On récupere les utilisateurs
 $requete = "SELECT * FROM utilisateur where role<>'admin' ORDER BY nom;";
 $requete_utilisateur = $dbh -> prepare($requete);
 $requete_utilisateur -> execute();
+
+//on verifie que l'utilisateur soit un admin
 
 if($_SESSION["role"]!="admin"){
     header("Location: ../framework/index.php");
     exit();
 }
 
+//ajout s'un utilisateur
 if(isset($_POST["inscription"])){
     if(isset($_POST['login']) && !empty($_POST['login']) && isset($_POST['mdp']) && !empty($_POST['mdp']) && isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['prenom']) && !empty($_POST['prenom'])){
         $login=filter_var($_POST['login'], FILTER_SANITIZE_STRING);
         $mdp=filter_var($_POST['mdp'], FILTER_SANITIZE_STRING);
         $nom=filter_var($_POST['nom'], FILTER_SANITIZE_STRING);
         $prenom=filter_var($_POST['prenom'], FILTER_SANITIZE_STRING);
+        //On verifie que le login ne soit pas deja pris
         $requete = "SELECT * FROM utilisateur where login=?;";
         $verif=$dbh -> prepare($requete);
         $verif->execute(array($login));
@@ -26,6 +31,7 @@ if(isset($_POST["inscription"])){
         }
     }
 }
+//Supression d'utilisateur
 if(isset($_POST['supprimer'])){
     $requete="DELETE FROM utilisateur WHERE login=?";
     $suppresion=$dbh -> prepare($requete);
